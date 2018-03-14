@@ -2,14 +2,16 @@
 
 import {Routes, RouterModule} from "@angular/router";
 import {NgModule} from "@angular/core";
-import {HomeComponent} from "./components/home.component";
 import {GameComponent} from "./components/game.component";
+import {LoginComponent} from "./components/login.component";
+import {ImagesComponent} from "./components/images.component";
 
 
 const routes:Routes =[
-    {path:'',redirectTo:'/home',pathMatch:'full'},
-    {path:'home',component:HomeComponent},
-    {path:'game',component:GameComponent}
+    {path:'',redirectTo:'/game',pathMatch:'full'},
+    {path:'login',component:LoginComponent},
+    {path:'game',component:GameComponent},
+    {path:'images',component:ImagesComponent}
 ];
 
 @NgModule({

@@ -5,6 +5,9 @@ FROM node:8-alpine as builder
 
 COPY package.json package-lock.json ./
 
+RUN npm config set proxy "http://wwwcache.univ-lr.fr:3128"
+RUN npm config set https-proxy "http://wwwcache.univ-lr.fr:3128"
+
 RUN npm set progress=false && npm config set depth 0 && npm cache clean --force
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build

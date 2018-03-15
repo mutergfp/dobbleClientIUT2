@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:8-alpine
 ARG source
 WORKDIR /app
 EXPOSE 4200

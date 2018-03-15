@@ -3,10 +3,11 @@
 //---------USERS---------
 export const API_USERS = "http://localhost:7777";
 export const API_USERS_LOGIN = API_USERS+"/account/login";
+export const API_USERS_REGISTER = API_USERS+"/account/register";
 
 
 
-//---------USERS---------
+//---------GAME---------
 export const API_GAME = "http://localhost:7777";
 export const API_GAME_DOWNLOAD = API_GAME+"/download/";
 

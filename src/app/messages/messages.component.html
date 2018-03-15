@@ -1,0 +1,11 @@
+<div class="row justify-content-center" *ngIf="messageService.messages.length">
+
+  <div id="messagescontainer" class="col-10">
+
+    <p class="white" *ngFor='let message of messageService.messages'> {{message}} </p>
+
+    <button class="btn" (click)="messageService.clear()">Ok</button>
+
+  </div>
+
+</div>

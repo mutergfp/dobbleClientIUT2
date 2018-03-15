@@ -1,0 +1,7 @@
+#messagescontainer{
+    background-color: rgba(0,0,0,0.5);
+    margin: 15px;
+    padding: 15px;
+    border: 2px solid grey;
+    border-radius: 10px;
+}

@@ -8,7 +8,7 @@ node {
         app = docker.build("gi1/dobble_client")
     }
 	stage('Run image') {
-		sh 'docker stop dobbleCartes'
+		sh 'docker stop dobbleClient'
 		app.run('-p 80:4200 -it --rm --name dobbleClient')
 	}
 }

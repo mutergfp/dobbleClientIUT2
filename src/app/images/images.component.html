@@ -1,0 +1,6 @@
+<div class="text-center">
+    <br/>
+    <div *ngIf="imagesService.images.length">
+        <img  class="img-thumbnail" *ngFor="let image of imagesService.images" src="{{api}}{{image}}">
+    </div>
+</div>

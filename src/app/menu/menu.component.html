@@ -1,0 +1,23 @@
+<div class="row">
+    <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" routerLink="/game" routerLinkActive="active">Jeu</a>
+        <a class="nav-link" routerLink="/images" routerLinkActive="active">Liste des images</a>
+        <a class="nav-link" routerLink="/leaderboard" routerLinkActive="active">Classement</a>
+    </nav>
+    <div class="col text-right white">
+        <nav class="nav nav-masthead justify-content-end">
+            <ng-container *ngIf="authService.userLogged; then userLoggedMenu else noUserMenu"></ng-container>
+        </nav>
+    </div>
+</div>
+
+
+<ng-template #userLoggedMenu>
+    <a class="nav-link" routerLinkActive="active" routerLink="/profile/{{authService.getUserName()}}" >Profil - {{authService.getUserName()}}</a>
+    <a (click)="logout()" class="nav-link">Se déconnecter</a>
+</ng-template>
+
+<ng-template #noUserMenu>
+        <a class="nav-link" routerLinkActive="active" routerLink="/login">Se connecter</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/register">Créer un compte</a>
+</ng-template>

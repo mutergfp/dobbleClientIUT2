@@ -1,0 +1,19 @@
+<div class="col-md-4 offset-md-4">
+    <form name="form" (ngSubmit)="login()" novalidate>
+        <h3 class="white mb-3 font-weight-normal">Se connecter</h3>
+        <label for="username" class="sr-only">Nom d'utilisateur</label>
+        <input placeholder="Nom d'utilisateur" id="username" type="text" class="form-control" name="username" [(ngModel)]="username" required
+               [class.is-valid]="username != undefined && username.length"
+               [class.is-invalid]="username != undefined && !username.length"
+        />
+        <label for="password" class="sr-only">Mot de passe</label>
+        <input placeholder="Mot de passe" id="password" type="password" class="form-control" name="password" [(ngModel)]="password" required
+               [class.is-valid]="password != undefined && password.length"
+               [class.is-invalid]="password != undefined && !password.length"
+        />
+        <br/>
+        <button [class.disabled]="!password || !username" class="btn btn-primary btn-block">
+            Se connecter
+        </button>
+    </form>
+</div>

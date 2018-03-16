@@ -1,7 +1,33 @@
 <div class="row justify-content-center">
-  <div id="profilecontainer" class="col-10" *ngIf="username==auth.getUserName()">
-    <h1 class="white">Mon profil</h1>
-
-    <p class="white">Nom d'utilisateur : {{username}}</p>
+  <div id="profilecontainer" class="col-10">
+    <ng-container *ngIf="username==auth.getUserName(); then myProfile else otherProfile"></ng-container>
   </div>
 </div>
+
+<ng-template #myProfile>
+  <h1 class="white">Mon profil</h1>
+
+  <p class="white">Nom d'utilisateur : {{username}}</p>
+
+  <br>
+
+  <h1 class="white">Statistiques</h1>
+
+  <ng-container *ngIf="playerService.getPlayer(username); then knownProfile else unknownProfile" ></ng-container>
+</ng-template>
+
+
+<ng-template #otherProfile>
+  <h1 class="white">Profil de {{username}}</h1>
+  <ng-container *ngIf="playerService.getPlayer(username); then knownProfile else unknownProfile"></ng-container>
+</ng-template>
+
+<ng-template #knownProfile>
+  <p class="white">Classement (ratio) : {{playerService.getPlayersOrderedByRatio().indexOf(playerService.getPlayer(username))+1}} ({{playerService.getPlayer(username).ratio}})</p>
+  <p class="white">Parties gagnées : {{playerService.getPlayer(username).wins}}</p>
+  <p class="white">Parties perdues : {{playerService.getPlayer(username).losses}}</p>
+</ng-template>
+
+<ng-template #unknownProfile>
+  <p class="white">Cet utilisateur est introuvable.</p>
+</ng-template>

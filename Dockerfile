@@ -8,6 +8,10 @@ RUN npm set progress=false && npm config set depth 0 && npm cache clean --force
 
 RUN npm i && mkdir /ng-app && cp -R ./node_modules ./ng-app
 
+RUN npm config set proxy "http://wwwcache.univ-lr.fr:3128"
+RUN npm config set https-proxy "http://wwwcache.univ-lr.fr:3128"
+
+
 WORKDIR /ng-app
 
 COPY . .

@@ -2,4 +2,13 @@ img{
     width: 200px;
     height: 200px;
     margin:15px;
+    transition-property: width, height, margin;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+}
+
+img:hover{
+    width: 208px;
+    height: 208px;
+    margin: 11px;
 }

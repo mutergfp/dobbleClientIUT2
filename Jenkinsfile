@@ -10,5 +10,6 @@ node {
 	stage('Run image') {
 		sh 'docker stop dobbleClient'
 		app.run('-p 80:80 -it --rm --name dobbleClient')
+		sh 'docker network connect network dobbleClient --alias dobbleClient'
 	}
 }

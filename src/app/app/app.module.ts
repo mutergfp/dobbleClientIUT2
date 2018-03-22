@@ -18,6 +18,7 @@ import { MessageService } from '../services/message/message.service';
 import {ProfileComponent} from "../profile/profile.component";
 import { PlayerService } from '../services/player/player.service';
 import {LeaderboardComponent} from "../leaderboard/leaderboard.component";
+import {CookieService} from "ngx-cookie-service";
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import {LeaderboardComponent} from "../leaderboard/leaderboard.component";
       HttpClientModule,
       FormsModule
   ],
-  providers: [AuthService, ImagesService, MessageService, PlayerService],
+  providers: [AuthService, ImagesService, MessageService, PlayerService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

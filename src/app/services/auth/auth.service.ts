@@ -3,13 +3,14 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {API_USERS_LOGIN, API_USERS_REGISTER} from "../../configs/apis_urls";
 import {MessageService} from "../message/message.service";
+import {CookieService} from "ngx-cookie-service";
 
 @Injectable()
 export class AuthService{
 
     userLogged:boolean;
 
-    constructor(private http: HttpClient, private messageService:MessageService){
+    constructor(private http: HttpClient, private messageService:MessageService, private cookies:CookieService){
         this.userLogged = this.isLoggedIn();
     }
 
@@ -20,6 +21,8 @@ export class AuthService{
                     console.log(res);
                     localStorage.setItem('id_token',res.toString());
                     localStorage.setItem('username',username);
+                    this.cookies.set('id_token',res.toString());
+                    this.cookies.set('username',username);
                     this.userLogged = true;
                     callBackSuccess();
                 },
@@ -90,7 +93,15 @@ export class AuthService{
     }
 
     isLoggedIn(){
-        return localStorage.getItem('id_token')!=null && localStorage.getItem('username')!=null;
+
+        if(localStorage.getItem('id_token')!=null && localStorage.getItem('username')!=null){
+            this.cookies.set('id_token',localStorage.getItem('id_token'));
+            this.cookies.set('username',localStorage.getItem('username'));
+            return true;
+        }else {
+            return false;
+        }
+
     }
 
     getUserName(){

@@ -6,17 +6,17 @@
       <tr>
         <th scope="col"><h3 class="white">#</h3></th>
         <th scope="col"><h3 class="white">Joueur</h3></th>
-        <th scope="col"><a (click)="setSortMethod(RATIO)"><h3 class="white">Ratio
+        <th scope="col"><a style="cursor:pointer" (click)="setSortMethod(RATIO);"><h3 class="white">Ratio
           <span *ngIf="sortMethod==RATIO&&sortInverted"><i class="fas fa-sort-up"></i></span>
           <span *ngIf="sortMethod==RATIO&&!sortInverted"><i class="fas fa-sort-down"></i></span>
           <span *ngIf="sortMethod!=RATIO"><i class="fas fa-sort"></i></span>
         </h3></a></th>
-        <th scope="col"><a (click)="setSortMethod(WINS)"><h3 class="white">Victoires
+        <th scope="col"><a style="cursor:pointer" (click)="setSortMethod(WINS)"><h3 class="white">Victoires
           <span *ngIf="sortMethod==WINS&&sortInverted"><i class="fas fa-sort-up"></i></span>
           <span *ngIf="sortMethod==WINS&&!sortInverted"><i class="fas fa-sort-down"></i></span>
           <span *ngIf="sortMethod!=WINS"><i class="fas fa-sort"></i></span>
         </h3></a></th>
-        <th scope="col"><a (click)="setSortMethod(LOSSES)"><h3 class="white">Défaites
+        <th scope="col"><a style="cursor:pointer" (click)="setSortMethod(LOSSES)"><h3 class="white">Défaites
           <span *ngIf="sortMethod==LOSSES&&sortInverted"><i class="fas fa-sort-up"></i></span>
           <span *ngIf="sortMethod==LOSSES&&!sortInverted"><i class="fas fa-sort-down"></i></span>
           <span *ngIf="sortMethod!=LOSSES"><i class="fas fa-sort"></i></span>

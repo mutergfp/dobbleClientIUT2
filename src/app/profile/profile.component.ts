@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../services/auth/auth.service";
 import {ActivatedRoute} from "@angular/router";
 import {PlayerService} from "../services/player/player.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +12,7 @@ import {PlayerService} from "../services/player/player.service";
 export class ProfileComponent implements OnInit {
 
 
-  constructor(public auth:AuthService, public playerService:PlayerService, private route: ActivatedRoute) {
+  constructor(public auth:AuthService, public playerService:PlayerService, private route: ActivatedRoute, private location:Location) {
   }
 
   get username(){
@@ -22,4 +23,7 @@ export class ProfileComponent implements OnInit {
     this.playerService.refresh();
   }
 
+  goBack(){
+    this.location.back();
+  }
 }

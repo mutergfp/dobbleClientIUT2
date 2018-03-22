@@ -13,8 +13,8 @@ export class Player{
     }
 
     get ratio():number{
-        return +(this.wins/this.losses).toFixed(2);
-
+        if(this.losses==0){return this.wins}
+        return +(this.wins/this.losses).toFixed(3);
     }
 
 }

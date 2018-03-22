@@ -1,6 +1,6 @@
 <div class="text-center">
     <br/>
     <div *ngIf="imagesService.images.length">
-        <a *ngFor="let image of imagesService.images" href="{{api}}{{image}}"><img  class="img-thumbnail" src="{{api}}{{image}}"/></a>
+        <img *ngFor="let image of imagesService.images" class="img-thumbnail" src="{{api}}{{image}}"/>
     </div>
 </div>

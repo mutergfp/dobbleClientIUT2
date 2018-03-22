@@ -1,6 +1,8 @@
 <div class="row justify-content-center">
+
   <div id="profilecontainer" class="col-10">
     <ng-container *ngIf="username==auth.getUserName(); then myProfile else otherProfile"></ng-container>
+    <a class="btn btn-light" (click)="goBack()"><i class="fas fa-chevron-left"></i> Retour</a>
   </div>
 </div>
 

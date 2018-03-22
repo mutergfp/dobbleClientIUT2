@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormsModule} from '@angular/forms';
 import {AuthService} from "../services/auth/auth.service";
 import {MessageService} from "../services/message/message.service";
 import {Location} from "@angular/common";
+import {Router} from '@angular/router'
 
 @Component({
     selector: 'register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
     password:string;
     confirmPassword:string;
 
-    constructor(private authService:AuthService, private location:Location){
+    constructor(private authService:AuthService, private location:Location, private router:Router){
 
     }
 
@@ -38,6 +39,8 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit(){
-
+        if(this.authService.isLoggedIn()){
+            this.router.navigateByUrl('/');
+        }
     }
 }

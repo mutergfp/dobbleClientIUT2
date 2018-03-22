@@ -22,7 +22,7 @@ export class PlayerService {
   }
 
   private static getPlayersList():Observable<{ username: string; wins: number; losses: number; }[]>{
-    return Observable.of([{username:"420 Blaze me",wins:57,losses:4},{username:"XXXDarkLucHacker",wins:27,losses:20},{username:"TerraxX",wins:54,losses:2},{username:"Joypok",wins:4,losses:42}]).delay(3000);
+    return Observable.of([{username:"420 Blaze me",wins:57,losses:4},{username:"XXXDarkLucHacker",wins:27,losses:20},{username:"TerraxX",wins:54,losses:2},{username:"Joypok",wins:4,losses:42}]).delay(0);
   }
 
   public getPlayer(username:string):Player{

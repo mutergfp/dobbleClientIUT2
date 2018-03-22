@@ -89,6 +89,8 @@ export class AuthService{
     logout(){
         localStorage.removeItem('id_token');
         localStorage.removeItem('username');
+        this.cookies.delete('id_token');
+        this.cookies.delete('username');
         this.userLogged = false;
     }
 

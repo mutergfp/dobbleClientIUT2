@@ -17,11 +17,11 @@ export class AuthService{
     login(username:string, password:string, callBackSuccess: () => void, callBackError: () => void){
         return this.http.post(API_USERS_LOGIN,{username:username, password:password})
             .subscribe(
-                res => {
+                (res:{token:string}) => {
                     console.log(res);
-                    localStorage.setItem('id_token',res.toString());
+                    localStorage.setItem('id_token',res.token);
                     localStorage.setItem('username',username);
-                    this.cookies.set('id_token',res.toString());
+                    this.cookies.set('id_token',res.token);
                     this.cookies.set('username',username);
                     this.userLogged = true;
                     callBackSuccess();

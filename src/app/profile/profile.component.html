@@ -28,6 +28,11 @@
   <p class="white">Classement (ratio) : {{playerService.getPlayersOrderedByRatio().indexOf(playerService.getPlayer(username))+1}} ({{playerService.getPlayer(username).ratio}})</p>
   <p class="white">Parties gagnées : {{playerService.getPlayer(username).wins}}</p>
   <p class="white">Parties perdues : {{playerService.getPlayer(username).losses}}</p>
+  <p class="white">Score moyen : {{playerService.getPlayer(username).meanScore}}</p>
+  <p class="white">Meilleur score : {{playerService.getPlayer(username).bestScore}}</p>
+  <p class="white">Nombre de clicks corrects : {{playerService.getPlayer(username).clicksCorrects}}</p>
+  <p class="white">Nombre de clicks incorrects : {{playerService.getPlayer(username).clicksIncorrects}}</p>
+  <p class="white">Clicks corrects : {{playerService.getPlayer(username).clickPercent}}%</p>
 </ng-template>
 
 <ng-template #unknownProfile>

@@ -13,7 +13,7 @@ import {Player} from "../services/player/player";
 export class LeaderboardComponent implements OnInit {
 
     readonly WINS:string = "WINS";
-    readonly LOSSES:string = "LOSSES";
+    readonly MEANSCORE:string = "LOSSES";
     readonly RATIO:string = "RATIO";
 
     sortMethod:string;
@@ -36,8 +36,8 @@ export class LeaderboardComponent implements OnInit {
             case this.WINS :
                 res = this.playerService.getPlayersOrderedByWins();
                 break;
-            case this.LOSSES:
-                res = this.playerService.getPlayersOrderedByLosses();
+            case this.MEANSCORE:
+                res = this.playerService.getPlayersOrderedByMeanScore();
                 break;
             default:
                 res = this.playerService.getPlayersOrderedByRatio();

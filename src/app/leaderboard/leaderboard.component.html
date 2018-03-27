@@ -16,10 +16,10 @@
           <span *ngIf="sortMethod==WINS&&!sortInverted"><i class="fas fa-sort-down"></i></span>
           <span *ngIf="sortMethod!=WINS"><i class="fas fa-sort"></i></span>
         </h3></a></th>
-        <th scope="col"><a style="cursor:pointer" (click)="setSortMethod(LOSSES)"><h3 class="white">Défaites
-          <span *ngIf="sortMethod==LOSSES&&sortInverted"><i class="fas fa-sort-up"></i></span>
-          <span *ngIf="sortMethod==LOSSES&&!sortInverted"><i class="fas fa-sort-down"></i></span>
-          <span *ngIf="sortMethod!=LOSSES"><i class="fas fa-sort"></i></span>
+        <th scope="col"><a style="cursor:pointer" (click)="setSortMethod(MEANSCORE)"><h3 class="white">Score moyen
+          <span *ngIf="sortMethod==MEANSCORE&&sortInverted"><i class="fas fa-sort-up"></i></span>
+          <span *ngIf="sortMethod==MEANSCORE&&!sortInverted"><i class="fas fa-sort-down"></i></span>
+          <span *ngIf="sortMethod!=MEANSCORE"><i class="fas fa-sort"></i></span>
         </h3></a></th>
       </tr>
       </thead>
@@ -29,7 +29,7 @@
         <td class="align-middle"><p class="white">{{player.username}}</p></td>
         <td class="align-middle"><p class="white">{{player.ratio}}</p></td>
         <td class="align-middle"><p class="white">{{player.wins}}</p></td>
-        <td class="align-middle"><p class="white">{{player.losses}}</p></td>
+        <td class="align-middle"><p class="white">{{player.meanScore}}</p></td>
       </tr>
       </tbody>
     </table>
